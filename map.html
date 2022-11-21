@@ -7,9 +7,10 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./Develop/style.css"/>
-    <title>eVie</title> 
-  </head>
+    <link rel="stylesheet" href="./Develop/map.css"/>
+    <title>eVie Map Interface</title> 
+    </head>
+
   <body>
     <nav>
         <div class="nav-wrapper #cfd8dc blue-grey lighten-4">
@@ -21,41 +22,21 @@
             </ul>
           </div>
     </nav>
-
-    <div class="container wholePage">
-
-      <div class="row eVieLogo container ">
-        <div class="col s12">
-          <img id="eVieMain" src = "./Assets/evie.png">
+    
+<div class="container">
+    <div class="row">
+        <div class="col 4">
+            <!--Sidebar content goes here-->
         </div>
-      </div>
-      
-      <div class="row">
-        <form class="col s12">
-            <div class="row inputContainer">
-                <div class="input-field col s11">
-                    <input id="textField" type="text" class="validate">
-                    <label for="textField">Address</label>
-                </div>
-                <div class="input-field col s1">
-                    <button class="searchBtn btn waves-effect waves-light" type="submit" name="action">Go!
-                    </button>
-                </div>
-            </div>
-        </form>
+
+        <div class="col 8">
+            <!--Map Div utilized by API-->
+            <div id="map"></div>
+        </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
+   
+    
 
 
 
@@ -64,8 +45,10 @@
     
 
     
-
-
-
+    <script src="./Develop/map.js"></script>
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzzcBB7D-V2eI4A_yM91uuRdsuUYvS-0A&callback=initMap&v=weekly"
+    defer
+  ></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
-</body>
+  </body>
