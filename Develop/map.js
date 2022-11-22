@@ -2,8 +2,8 @@ let map;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 43.653, lng: -79.383 }, //changed these coordinates to be Toronto centered
-    zoom: 12, //change zoom if needed
+    center: { lat: 43.653, lng: -79.383 },
+    zoom: 12,
   });
 
   // const markers = [
@@ -19,7 +19,7 @@ function initMap() {
 
 window.initMap = initMap;
 
-let chargingStationResults = "https://developer.nrel.gov/api/alt-fuel-stations/v1.json?api_key=aeMQVkjcPT4MOb6dlvaOQLqyHzeSaqhyIB4xDSzf&status=E&fuel_type=ELEC&cng_fill_type=all&state=ON&country=CA&limit=all"
+let chargingStationResults = "https://developer.nrel.gov/api/alt-fuel-stations/v1.json?api_key=aeMQVkjcPT4MOb6dlvaOQLqyHzeSaqhyIB4xDSzf&status=E&fuel_type=ELEC&acess=public&state=ON&country=CA&limit=all"
 async function getApi(){
   const response = await fetch(chargingStationResults);
   var data = await response.json();
