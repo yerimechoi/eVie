@@ -8,6 +8,7 @@ html, body {
     height: 93vh;  /*can play around with these numbers */
     width: 83vw;
     align-items: flex-end;
+    
   }
   
 /* Nav Bar on home page - majority of styling accomplished with materialize */
