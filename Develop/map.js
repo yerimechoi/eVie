@@ -200,7 +200,6 @@ function initMap() {
       ],
   });
   var input = document.getElementById('searchInput');
-    // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input); //can remove this part in order to get the search bar above the map, in the blank area that was problematic before 
 
     var autocomplete = new google.maps.places.Autocomplete(input);
     autocomplete.bindTo('bounds', map);
@@ -208,17 +207,12 @@ function initMap() {
     var infowindow = new google.maps.InfoWindow();
     var marker = new google.maps.Marker({
         map: map,
-        anchorPoint: new google.maps.Point(0, -29)
     });
 
     autocomplete.addListener('place_changed', function() {
         infowindow.close();
         marker.setVisible(false);
         var place = autocomplete.getPlace();
-        if (!place.geometry) {
-            window.alert("Autocomplete's returned place contains no geometry");
-            return;
-        }
   
         // If the place has geometry, then present it on a map.
         if (place.geometry.viewport) {
@@ -234,7 +228,7 @@ function initMap() {
             anchor: new google.maps.Point(17, 34),
             scaledSize: new google.maps.Size(35, 35)
         }));
-        marker.setPosition(place.geometry.location);
+        marker.setPosition(place.geometry.location); //Can remove this line of code - we dont need markers being created 
         marker.setVisible(true);
     
         var address = '';
