@@ -268,9 +268,8 @@ function initMap() {
         ],
       });
       for (let i = 0; i < data.fuel_stations.length; i++) {
-        console.log(typeof data.fuel_stations[i].latitude)
       let location = {lat: data.fuel_stations[i].latitude, lng: data.fuel_stations[i].longitude}
-         // Add pins into the map using 
+         // Add pins into the map using the charging station API
          pin = new google.maps.Marker({
           map: map,
           position: {lat: data.fuel_stations[i].latitude, lng: data.fuel_stations[i].longitude},
