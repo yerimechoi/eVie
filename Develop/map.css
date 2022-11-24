@@ -3,6 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    background-color:#d7e5ed; /* Tentative color for background of page*/
   }
 
 #map {
@@ -59,13 +60,17 @@ html, body {
     background-color:#607d8b ;
 }
 
+/* Search field in sidebar*/
 
-  
-  /* Control the left side */
+#searchInput {
+    padding: 5px;
+}
 
-  
-  /* Control the right side */
-  
-  
-  /* If you want the content centered horizontally and vertically */
+::placeholder {
+color:rgb(116, 121, 116) ;
+font-style: italic;
+}
 
+.row {
+    margin-top: 3px;
+}
