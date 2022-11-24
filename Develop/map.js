@@ -1,3 +1,4 @@
+
 function initMap() {
   
     let chargingStationResults = "https://developer.nrel.gov/api/alt-fuel-stations/v1/nearest.json?api_key=aeMQVkjcPT4MOb6dlvaOQLqyHzeSaqhyIB4xDSzf&location=Toronto,ON&status=E&access=public&fuel_type=ELEC&ev_charging_level=all&state=ON&country=CA&limit=all"
@@ -285,3 +286,4 @@ function initMap() {
   window.initMap = initMap;
 
 
+window.initMap = initMap;
