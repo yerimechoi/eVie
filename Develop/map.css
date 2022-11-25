@@ -2,15 +2,24 @@ html, body {
     height: 99%;
     margin: 0;
     padding: 0;
+    overflow: hidden;
   }
 
 #map {
     height: 93vh;  /*can play around with these numbers */
-    width: 83vw;
+    width: 76vw;
+    scale: 0.98;
     align-items: flex-end;
   }
+
+  
+.map-holder {
+    display:inline-block;
+}
   
 /* Nav Bar on home page - majority of styling accomplished with materialize */
+
+
 #evie-nav{
     /* height : fit-content; */
     max-width: 60px;
@@ -51,4 +60,18 @@ html, body {
 }
 
 
+  
+  /* Control the left side */
+.scroll{
+    height: 100%;
+    overflow: auto;
+    cursor: pointer;
+}
+a {
+    cursor: pointer;
+}
+  /* Control the right side */
+  
+  
+  /* If you want the content centered horizontally and vertically */
 

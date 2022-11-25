@@ -25,9 +25,9 @@
 /* temporary fix for logo not centering the way it should */
 .eVieLogo {
     display: flex;
-    justify-content: space-around;
-    padding-top: 95px;
-    padding-left: 70px; 
+    justify-content: center;
+    padding-top: 200px; /*increase this number to center object on screen more*/
+    
 }
 
 .searchBtn {
@@ -38,3 +38,6 @@
     background-color:#607d8b ;
 }
 
+.input-field {
+    justify-content: center;
+}
