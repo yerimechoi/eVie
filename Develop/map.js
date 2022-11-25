@@ -1,3 +1,5 @@
+var searchBar = $("#searchInput");
+var indexSearch = localStorage.getItem("indexSearch");
 
 function initMap() {
   
@@ -284,5 +286,10 @@ function initMap() {
   }
   
   window.initMap = initMap;
+
+  if (localStorage.getItem("indexSearch")!=null){
+     searchBar.val(localStorage.getItem("indexSearch"));
+  }
+  console.log(searchBar);
 
 
