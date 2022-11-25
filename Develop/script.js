@@ -1,6 +1,6 @@
 var indexSearch = localStorage.getItem("indexSearch");
 var goButton = $("#go-button");
-
+var evieIcon = $("#evie-nav");
 
 var place;
 
@@ -27,5 +27,8 @@ function onPlaceChanged() {
 
 goButton.on('click', function(){
     window.open("./map.html");  //open map.html when go button is clicked
-   
+});
+
+evieIcon.on('click', function(){
+    window.open("./map.html");  //open map.html when go button is clicked
 });
