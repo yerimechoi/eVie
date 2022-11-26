@@ -59,16 +59,36 @@ html, body {
     background-color:#607d8b ;
 }
 
+/* Search field in sidebar*/
 
+#searchInput {
+    padding: 5px;
+}
+
+::placeholder {
+color:rgb(116, 121, 116) ;
+font-style: italic;
+}
+
+.row {
+    margin-top: 3px;
+}
   
   /* Control the left side */
-.scroll{
-    height: 100%;
+
+#listLoc {
+    height: 80%;
+    position:fixed;
     overflow: auto;
-    cursor: pointer;
 }
-a {
-    cursor: pointer;
+
+p {
+    margin: 0px;
+}
+
+.selectList {
+    border-bottom: 1px solid rgb(176, 162, 162);
+    padding-bottom: 5px;
 }
   /* Control the right side */
   
