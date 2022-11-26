@@ -13,6 +13,17 @@ function onPlaceChanged() {
     if (!place.geometry) {
         document.getElementById('#autocomplete').placeholder = 'Enter a Location'
     } else {
-        document.getElementById('details').innerHTML = place.name;
-    }
+        //document.getElementById('details').innerHTML = place.name;
+        localStorage.setItem("indexSearch", searchBar.val());  //add search item to local storage    
+        indexSearch = localStorage.getItem("indexSearch");
+        console.log(searchBar.val());
+    }   
 }
+
+goButton.on('click', function(){
+    window.open("./map.html");  //open map.html when go button is clicked
+});
+
+evieIcon.on('click', function(){
+    window.open("./map.html");  //open map.html when go button is clicked
+});

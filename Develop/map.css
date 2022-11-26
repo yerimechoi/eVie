@@ -3,6 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    overflow: hidden;
   }
 
 #map {
@@ -11,6 +12,11 @@ html, body {
     scale: 0.98;
     align-items: flex-end;
   }
+
+  
+.map-holder {
+    display:inline-block;
+}
 
   
 .map-holder {

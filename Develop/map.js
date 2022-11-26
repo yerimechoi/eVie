@@ -1,7 +1,8 @@
-//let searchLocations=[];
-var map;
+var searchBar = $("#searchInput");
+var indexSearch = localStorage.getItem("indexSearch");
+
 function initMap() {
-  
+
   let chargingStationResults = "https://developer.nrel.gov/api/alt-fuel-stations/v1/nearest.json?api_key=aeMQVkjcPT4MOb6dlvaOQLqyHzeSaqhyIB4xDSzf&location=Toronto,ON&status=E&access=public&fuel_type=ELEC&ev_charging_level=all&state=ON&country=CA&limit=all"
 
   let mapLocations = [];
@@ -13,7 +14,7 @@ function initMap() {
       return response.json()
     })
     .then(function (data) {
-     map = new google.maps.Map(document.getElementById("map"), {
+      var map = new google.maps.Map(document.getElementById("map"), {
         center: { lat: 43.653, lng: -79.383 }, //changed these coordinates to be Toronto centered
         zoom: 12, //change zoom if needed
         styles: [
@@ -214,19 +215,18 @@ function initMap() {
 
       var input = document.getElementById('searchInput');
       // map.controls[google.maps.ControlPosition.TOP_LEFT].push(input); //can remove this part in order to get the search bar above the map, in the blank area that was problematic before 
-    
+
       var autocomplete = new google.maps.places.Autocomplete(input);
       autocomplete.bindTo('bounds', map);
-    
+
       var infowindow = new google.maps.InfoWindow();
-    
+
       autocomplete.addListener('place_changed', function () {
         infowindow.close();
         var place = autocomplete.getPlace();
         if (!place.geometry) {
           return;
         }
-    
         // If the place has geometry, then present it on a map.
         if (place.geometry.viewport) {
           map.fitBounds(place.geometry.viewport);
@@ -241,7 +241,6 @@ function initMap() {
         //   anchor: new google.maps.Point(17, 34),
         //   scaledSize: new google.maps.Size(35, 35)
         // }));
-    
         var address = '';
         if (place.address_components) {
           address = [
@@ -250,10 +249,10 @@ function initMap() {
             (place.address_components[2] && place.address_components[2].short_name || '')
           ].join(' ');
         }
-    
+
         infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address);
         infowindow.open(map);
-    
+
         // Location details
         for (var i = 0; i < place.address_components.length; i++) {
           if (place.address_components[i].types[0] == 'postal_code') {
@@ -335,3 +334,10 @@ function addStationList(arr) {
 
 
 window.initMap = initMap;
+
+  if (localStorage.getItem("indexSearch")!=null){
+     searchBar.val(localStorage.getItem("indexSearch"));
+  }
+  console.log(searchBar);
+
+
