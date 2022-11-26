@@ -1,3 +1,9 @@
+var indexSearch = localStorage.getItem("indexSearch");
+var goButton = $("#go-button");
+var evieIcon = $("#evie-nav");
+var searchBar = $("#autocomplete");
+var place;
+
 let autocomplete; 
 function initAutocomplete() {
     autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'),
