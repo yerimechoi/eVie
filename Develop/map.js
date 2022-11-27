@@ -351,8 +351,8 @@ function addStationList(arr) {
     divList.append(pStreet);
     divList.append(pZip);
     divList.append(pCity);
-    $("#listLoc").append(pBreak);
-    $("#listLoc").append(divList);
+    $("#listLoc").prepend(pBreak);
+    $("#listLoc").prepend(divList);
   //}
 }
 
