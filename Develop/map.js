@@ -1,5 +1,8 @@
 var searchBar = $("#searchInput");
 var indexSearch = localStorage.getItem("indexSearch");
+var indexFlag = localStorage.getItem("indexFlag");
+var placeDetails = JSON.parse(localStorage.getItem("placeDetails"));
+
 
 function initMap() {
 
@@ -221,13 +224,7 @@ function initMap() {
 
       var infowindow = new google.maps.InfoWindow();
 
-      autocomplete.addListener('place_changed', function () {
-        infowindow.close();
-        var place = autocomplete.getPlace();
-        if (!place.geometry) {
-          return;
-        }
-        // If the place has geometry, then present it on a map.
+      function presentItOnMap(place){
         if (place.geometry.viewport) {
           map.fitBounds(place.geometry.viewport);
         } else {
@@ -254,18 +251,46 @@ function initMap() {
         infowindow.open(map);
 
         // Location details
-        for (var i = 0; i < place.address_components.length; i++) {
-          if (place.address_components[i].types[0] == 'postal_code') {
-            document.getElementById('postal_code').innerHTML = place.address_components[i].long_name;
-          }
-          if (place.address_components[i].types[0] == 'country') {
-            document.getElementById('country').innerHTML = place.address_components[i].long_name;
-          }
+        // for (var i = 0; i < place.address_components.length; i++) {
+        //   if (place.address_components[i].types[0] == 'postal_code') {
+        //     document.getElementById('postal_code').innerHTML = place.address_components[i].long_name;
+        //   }
+        //   if (place.address_components[i].types[0] == 'country') {
+        //     document.getElementById('country').innerHTML = place.address_components[i].long_name;
+        //   }
+        // }
+      }
+
+       
+       if (localStorage.getItem("indexSearch")!=null){  
+        searchBar.val(indexSearch);                       //copy the searched address from landing page or from previous search into search bar on map page
+        localStorage.setItem("indexFlag","false");
+        presentItOnMap(placeDetails);                     //calls present on map function on starup
+        
+
+        console.log(indexSearch);
+        
+        console.log(indexFlag);
+      }
+      
+
+
+      
+
+      autocomplete.addListener('place_changed', function () {
+        infowindow.close();
+        var place = autocomplete.getPlace();
+        if (!place.geometry) {
+          return;
         }
-        document.getElementById('location').innerHTML = place.formatted_address;
-        document.getElementById('lat').innerHTML = place.geometry.location.lat();
-        document.getElementById('lon').innerHTML = place.geometry.location.lng();
+
+        // If the place has geometry, then present it on a map.
+        presentItOnMap(place);                              //call present on map function from autocomplete
+        localStorage.setItem("indexSearch",searchBar.val());
+        localStorage.setItem("placeDetails",JSON.stringify(place));
       });
+
+     
       for (let i = 0; i < data.fuel_stations.length; i++) {
         //console.log(typeof data.fuel_stations[i].latitude)
       let location = {lat: data.fuel_stations[i].latitude, lng: data.fuel_stations[i].longitude}
@@ -334,10 +359,11 @@ function addStationList(arr) {
 
 
 window.initMap = initMap;
+console.log(placeDetails);
 
-  if (localStorage.getItem("indexSearch")!=null){
-     searchBar.val(localStorage.getItem("indexSearch"));
-  }
-  console.log(searchBar);
+// if (localStorage.getItem("indexSearch")!=null){
+//      searchBar.val(localStorage.getItem("indexSearch"));
+// }
+// console.log(searchBar);
 
 
