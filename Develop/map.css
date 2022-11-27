@@ -3,7 +3,7 @@ html, body {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color:#d7e5ed; /* Tentative color for background of page*/
+    overflow: hidden;
   }
 
 #map {
@@ -12,6 +12,11 @@ html, body {
     scale: 0.98;
     align-items: flex-end;
   }
+
+  
+.map-holder {
+    display:inline-block;
+}
 
   
 .map-holder {
@@ -74,3 +79,21 @@ font-style: italic;
 .row {
     margin-top: 3px;
 }
+  
+  /* Control the left side */
+
+#listLoc {
+    height: 80%;
+    position:fixed;
+    overflow: auto;
+}
+
+p {
+    margin: 0px;
+}
+
+.selectList {
+    border-bottom: 1px solid rgb(176, 162, 162);
+    padding-bottom: 5px;
+}
+
