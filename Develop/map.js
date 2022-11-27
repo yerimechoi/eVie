@@ -262,7 +262,7 @@ function initMap() {
       }
 
        
-       if (localStorage.getItem("indexFlag")!=null){  
+       if (localStorage.getItem("indexSearch")!=null){  
         searchBar.val(indexSearch);                       //copy the searched address from landing page or from previous search into search bar on map page
         localStorage.setItem("indexFlag","false");
         presentItOnMap(placeDetails);                     //calls present on map function on starup
