@@ -349,8 +349,8 @@ function addStationList(arr) {
     divList.append(pPricing);
     divList.append(pState);
     divList.append(pLC);
-    $("#listLoc").append(pBreak);
-    $("#listLoc").append(divList);
+    $("#listLoc").prepend(pBreak);
+    $("#listLoc").prepend(divList);
   //}
 }
 
