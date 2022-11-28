@@ -1,38 +1,40 @@
-html, body {
+html,
+body {
     height: 99%;
     margin: 0;
     padding: 0;
     overflow: hidden;
     overflow: hidden;
-  }
+}
 
 #map {
-    height: 93vh;  /*can play around with these numbers */
+    height: 93vh;
+    /*can play around with these numbers */
     width: 76vw;
     scale: 0.98;
     align-items: flex-end;
-  }
-
-  
-.map-holder {
-    display:inline-block;
 }
 
-  
+
 .map-holder {
-    display:inline-block;
+    display: inline-block;
 }
-  
+
+
+.map-holder {
+    display: inline-block;
+}
+
 /* Nav Bar on home page - majority of styling accomplished with materialize */
 
 
-#evie-nav{
+#evie-nav {
     /* height : fit-content; */
     max-width: 60px;
     padding: 12px 0px 0px 20px;
 }
 
-.navContent li  {
+.navContent li {
     color: black;
 }
 
@@ -54,15 +56,15 @@ html, body {
     display: flex;
     justify-content: space-around;
     padding-top: 95px;
-    padding-left: 70px; 
+    padding-left: 70px;
 }
 
 .searchBtn {
-    background-color:#2f7598 ;
+    background-color: #2f7598;
 }
 
 .searchBtn:hover {
-    background-color:#607d8b ;
+    background-color: #607d8b;
 }
 
 /* Search field in sidebar*/
@@ -72,19 +74,19 @@ html, body {
 }
 
 ::placeholder {
-color:rgb(116, 121, 116) ;
-font-style: italic;
+    color: rgb(116, 121, 116);
+    font-style: italic;
 }
 
 .row {
     margin-top: 3px;
 }
-  
-  /* Control the left side */
+
+/* Control the left side */
 
 #listLoc {
     height: 80%;
-    position:fixed;
+    position: fixed;
     overflow: auto;
 }
 
@@ -96,4 +98,3 @@ p {
     border-bottom: 1px solid rgb(176, 162, 162);
     padding-bottom: 5px;
 }
-
