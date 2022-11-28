@@ -1,75 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="./Develop/style.css"/>
-    <title>eVie</title> 
-  </head>
-  <body>
-    <nav>
-        <div class="nav-wrapper #cfd8dc blue-grey lighten-4">
-            <a href="#" class="brand-logo"><img id = "evie-nav" src = "./Assets/evieLogo.png"></a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down navContent">
-              <li><a class ="enable" href="sass.html">About</a></li>
-              <li><a class="disable" href="badges.html">Sign Up</a></li>
-              <li><a class="disable" href="collapsible.html">Login</a></li>
-            </ul>
-          </div>
-    </nav>
 
-    <div class="container wholePage">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="./Develop/style.css" />
+  <title>eVie</title>
+</head>
 
-      <div class="row eVieLogo container ">
-        <div class="col s12 offset-s1"> <!--Change offset to help horizontal centering, add left padding if needed in style sheet to perfect the positioning -->
-          <img id="eVieMain" src = "./Assets/evie.png">
-        </div>
+<body>
+  <nav>
+    <div class="nav-wrapper #cfd8dc blue-grey lighten-4">
+      <a href="#" class="brand-logo"><img id="evie-nav" src="./Assets/evieLogo.png"></a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down navContent">
+        <!--Content is placeholder-->
+        <li><a class="enable" href="https://docs.google.com/presentation/d/1iszc3WNTgMVUNBDR4Lcc_4OkZsQNFJb1zmODRIXEPBI/edit#slide=id.g198d2eb5594_0_74">About</a></li>
+        <li><a class="disable">Sign Up</a></li>
+        <li><a class="disable">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container wholePage">
+
+    <div class="row eVieLogo container ">
+      <div class="col s12 offset-s1">
+        <!--Change offset to help horizontal centering, add left padding if needed in style sheet to perfect the positioning -->
+        <img id="eVieMain" src="./Assets/evie.png">
       </div>
-      
-      <div class="row">
-        <form class="col s12">
-            <div class="row inputContainer">
-                <div class="input-field col s7 offset-s2"> 
-                    <input id="autocomplete" type="text" placeholder="Enter a location">
-                    
-                </div>
-                <div class="input-field col s2">
-                    <button id="go-button" class="searchBtn btn waves-effect waves-light" type="submit" name="action">Go!
-                    </button>
-                </div>
-            </div>
-        </form>
     </div>
 
+    <div class="row">
+      <form class="col s12">
+        <div class="row inputContainer">
+          <div class="input-field col s7 offset-s2">
+            <input id="autocomplete" type="text" placeholder="Enter a location">
 
+          </div>
+          <div class="input-field col s2">
+            <button id="go-button" class="searchBtn btn waves-effect waves-light" type="submit" name="action">Go!
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-    
-
-  
-  <script src="./Develop/script.js"></script>
-  <script async
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzzcBB7D-V2eI4A_yM91uuRdsuUYvS-0A&libraries=places&callback=initAutocomplete">
-</script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>  
+    <script src="./Develop/script.js"></script>
+    <script async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAzzcBB7D-V2eI4A_yM91uuRdsuUYvS-0A&libraries=places&callback=initAutocomplete">
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </body>
