@@ -280,7 +280,7 @@ function initMap() {
         //added click event to marker to zoom and display details in the sidebar 
         google.maps.event.addListener(pin, 'click', function () {
           map.setCenter(this.getPosition());
-          map.setZoom(17);
+          map.setZoom(16);
           infoW.setContent(data.fuel_stations[i].station_name);
           infoW.open(map,this);
           let searchLoc = {
