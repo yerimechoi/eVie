@@ -37,7 +37,7 @@ https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/nearest/
 To access this project, you can click on the final URL or the gitHub URL through the repository. In the gitHub repository, you can clone the repository to access locally or click on Settings > Pages > Visit site.
 
 eVie URL:
-https://yerimechoi.github.io/Project_1/
+https://yerimechoi.github.io/eVie/
 
 github URL:
 https://github.com/yerimechoi/Project_1
