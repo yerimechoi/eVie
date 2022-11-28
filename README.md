@@ -1,122 +1,52 @@
-# 07 Project 1: Interactive Front-End Application
+# Project 1 - eVie
 
-At the conclusion of each phase of this course, you’ll work with a group of your fellow students to create a **project**. A project is collaborative work among a group of developers to create an application that solves a real-world problem. Projects model the experience you’ll encounter in every development role at any company, from large multinational businesses to small startups. Coding is collaborative.
+## Description
+This project was to use 2 server-side APIs to create a real-world front-end application. eVie is a web application to locate electric vehicle charging stations near the user and get more details on what the charging stations offers.
 
-A project is a bit different from the Challenge assignments you’ve worked on so far. One of the biggest differences is that you’ll no longer build an application by yourself! This has some advantages&mdash;you won’t have to do all of the work, you can divide up duties, and you can share skills and knowledge with other developers and lean on their strengths. This can also be challenging if you’re used to working alone. Constant communication and time management are just two of the skills you’ll need to practice to make sure everyone in your group works together to complete the project. 
+## User Story
+AS A driver
+I WANT to find EV charging stations
+SO I can charge my vehicle
 
-Projects won’t provide you with a user story or acceptance criteria, because you and your group will create them once you decide which real-world problem your application will solve. This lack of constraints can be freeing in a way, because you have room to build what you want, but it also means that you have to decide what those constraints are before you can start working.
+## Acceptance Criteria
+GIVEN I am an electric vehicle driver looking for charging stations,
+WHEN I open the app
+THEN I will be directed to a landing page
+WHEN I search a location on the app,
+THEN I will be taken to that area on the map and  shown charging stations within the area                     
+WHEN I select a charging station
+THEN I will be shown information about that charging station
 
-Finally, a project requires a presentation, because you’re trying to convince an audience that it serves a purpose. Your instructional staff and fellow students are investors, and you’re pitching your creation to them&mdash;an experience that developers are required to do frequently. Your presentation is just as important as the actual project, so take it just as seriously.
+## Mock-Up vs. Project
+The following shows the comparison between the mock-up and the final site. The mock-up was created in figma as a wireframe as to how the site will look and act. Following the wireframe, the site looks very similar to the mock-up with additional details and animations.
 
-## Project Requirements
+![Mock-Up](./Assets/mock-up.gif)
 
-You and your group will use everything you’ve learned over the past six modules to create a real-world front-end application that you’ll be able to showcase to potential employers. The user story and acceptance criteria will depend on the project that you create, but your project must fulfil the following requirements:
+![Project](./Assets/final.gif)
 
-* Use a CSS framework other than Bootstrap.
+## API Reference
+These APIs provide information to drivers of the nearest charging stations as well as the station details.
 
-* Be deployed to GitHub Pages.
+Map - Google Maps
+https://developers.google.com/maps/documentation/directions
 
-* Be interactive (i.e., accept and respond to user input).
+Charging Station - Developer Network
+https://developer.nrel.gov/docs/transportation/alt-fuel-stations-v1/nearest/
 
-* Use at least two [server-side APIs](https://coding-boot-camp.github.io/full-stack/apis/api-resources).
+## Usage
+To access this project, you can click on the final URL or the gitHub URL through the repository. In the gitHub repository, you can clone the repository to access locally or click on Settings > Pages > Visit site.
 
-* Does not use alerts, confirms, or prompts (use modals).
+eVie URL:
+https://yerimechoi.github.io/Project_1/
 
-* Use client-side storage to store persistent data.
+github URL:
+https://github.com/yerimechoi/Project_1
 
-* Be responsive.
+## Collaborators
+Greg Griffith           https://github.com/GregGriffith905
+Jeena Vasudevan         https://github.com/JeenaKozhimukkath
+Joshua Ramkissoon       https://github.com/JoshuaOrlandoR
+Esther Choi             https://github.com/yerimechoi
 
-* Have a polished UI.
-
-* Have a clean repository that meets quality coding standards (file structure, naming conventions, follows best practices for class/id naming conventions, indentation, quality comments, etc.).
-
-* Have a quality README (with unique name, description, technologies used, screenshot, and link to deployed application).
-
-## Presentation Requirements
-
-Use this [project presentation template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing) to address the following: 
-
-* Elevator pitch: a one minute description of your application
-
-* Concept: What is your user story? What was your motivation for development?
-
-* Process: What were the technologies used? How were tasks and roles broken down and assigned? What challenges did you encounter? What were your successes?
-
-* Demo: Show your stuff!
-
-* Directions for Future Development
-
-* Links to the deployed application and the GitHub repository
-
-## Grading Requirements
-
-This project is graded based on the following criteria:
-
-### Technical Acceptance Criteria: 25%
-
-* Satisfies the following code requirements:
-
-  * Application uses at least two [server-side APIs](https://coding-boot-camp.github.io/full-stack/apis/api-resources)
-
-  * Application uses client-side storage to store persistent data.
-
-  * Application doesn't use JS alerts, prompts, or confirms (uses modals instead).
-
-  * Application uses a CSS framework other than Bootstrap.
-
-  * Application is interactive (accepts and responds to user input)
-
-### Concept 10%
-
-* Application should be a unique and novel idea.
-
-* Your group should clearly and concisely articulate your project idea.
-
-### Deployment: 20%
-
-* Application deployed at live URL and loads with no errors.
-
-* Application GitHub URL submitted.
-
-### Repository Quality: 10%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains a quality README file with description, screenshot, and link to deployed application.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application is responsive.
-
-### Presentation 10%
-
-* Your group should present using a slide deck.
-
-* Every group member should speak during the presentation.
-
-* Your presentation should follow the [Project Presentation Template](https://docs.google.com/presentation/d/10QaO9KH8HtUXj__81ve0SZcpO5DbMbqqQr4iPpbwKks/edit?usp=sharing).
-
-### Collaboration 10%
-
-* There are no major disparities in the number of GitHub contributions between group members.
-
-## How to Submit Your Interactive Front-End Project
-
-**Each member of your group** is required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository, with a unique name and a README describing the project.
-
----
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+## License
+N/A
