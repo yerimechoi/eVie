@@ -224,12 +224,12 @@ function initMap() {
 
       var infowindow = new google.maps.InfoWindow();
 
-      function presentItOnMap(place){
+      function presentItOnMap(place) {
         if (place.geometry.viewport) {
           map.fitBounds(place.geometry.viewport);
         } else {
           map.setCenter(place.geometry.location);
-          map.setZoom(20);
+          map.setZoom(16);
         }
         // marker.setIcon(({
         //   url: place.icon,
@@ -261,21 +261,21 @@ function initMap() {
         // }
       }
 
-       
-       if (localStorage.getItem("indexSearch")!=null){  
+
+      if (localStorage.getItem("indexSearch") != null) {
         searchBar.val(indexSearch);                       //copy the searched address from landing page or from previous search into search bar on map page
-        localStorage.setItem("indexFlag","false");
+        localStorage.setItem("indexFlag", "false");
         presentItOnMap(placeDetails);                     //calls present on map function on starup
-        
+
 
         console.log(indexSearch);
-        
+
         console.log(indexFlag);
       }
-      
 
 
-      
+
+
 
       autocomplete.addListener('place_changed', function () {
         infowindow.close();
@@ -286,75 +286,106 @@ function initMap() {
 
         // If the place has geometry, then present it on a map.
         presentItOnMap(place);                              //call present on map function from autocomplete
-        localStorage.setItem("indexSearch",searchBar.val());
-        localStorage.setItem("placeDetails",JSON.stringify(place));
+        localStorage.setItem("indexSearch", searchBar.val());
+        localStorage.setItem("placeDetails", JSON.stringify(place));
       });
 
-     
+
       for (let i = 0; i < data.fuel_stations.length; i++) {
         //console.log(typeof data.fuel_stations[i].latitude)
-      let location = {lat: data.fuel_stations[i].latitude, lng: data.fuel_stations[i].longitude}
-         // Add pins into the map using 
-         pin = new google.maps.Marker({
+        let location = { lat: data.fuel_stations[i].latitude, lng: data.fuel_stations[i].longitude }
+        // Add pins into the map using 
+        pin = new google.maps.Marker({
           map: map,
-          position: {lat: data.fuel_stations[i].latitude, lng: data.fuel_stations[i].longitude},
+          position: { lat: data.fuel_stations[i].latitude, lng: data.fuel_stations[i].longitude },
           draggable: false,
         })
         //added click event to marker to zoom and display details in the sidebar 
-        google.maps.event.addListener(pin, 'click', function() {
+        google.maps.event.addListener(pin, 'click', function () {
           //map.panTo(this.getPosition());
           //searchLocations=[];
           map.setCenter(this.getPosition());
-          map.setZoom(14);
-          let searchLoc={ station_name: data.fuel_stations[i].station_name, 
+          map.setZoom(17);
+          let searchLoc = {
+            station_name: data.fuel_stations[i].station_name,
             station_phone: data.fuel_stations[i].station_phone,
             street_address: data.fuel_stations[i].street_address,
             zip: data.fuel_stations[i].zip,
             city: data.fuel_stations[i].city,
-            distance_km: data.fuel_stations[i].distance_km, 
+            distance_km: data.fuel_stations[i].distance_km,
             access_days_time: data.fuel_stations[i].access_days_time,
-            lat: data.fuel_stations[i].latitude, lng: data.fuel_stations[i].longitude
+            connector_type: data.fuel_stations[i].ev_connector_types,
+            lat: data.fuel_stations[i].latitude,
+            lng: data.fuel_stations[i].longitude
           }
           //searchLocations.push(searchLoc);
           addStationList(searchLoc);
-          }); 
-        
+        });
+
         mapLocations.push(location);
       }
-      
-      console.log(mapLocations);
+
+      console.log(data);
+
+      //function to dynamically add station details to the sidebar
+      function addStationList(arr) {
+        //for (let i = 0; i < arr.length; i++) {
+        var divList = $("<div>");
+        divList.addClass("selectList");
+        //$(divList).attr('id', i);
+        var pName = $("<p>");
+        pName.text(arr.station_name);
+        var pPhone = $("<p>");
+        pPhone.text(arr.station_phone);
+        var pStreet = $("<p>");
+        pStreet.text(arr.street_address);
+        var pZip = $("<p>");
+        pZip.text(arr.zip);
+        var pCity = $("<p>");
+        pCity.text(arr.city);
+        var pBreak = $("<br>");
+        //aEle.append(divList);
+        divList.append(pName);
+        divList.append(pPhone);
+        divList.append(pStreet);
+        divList.append(pZip);
+        divList.append(pCity);
+        $("#listLoc").append(pBreak);
+        $("#listLoc").append(divList);
+        //}
+      }
     });
-}
+};
 
 
-//function to dynamically add station details to the sidebar
-function addStationList(arr) {
-  //for (let i = 0; i < arr.length; i++) {
-    
-    var divList = $("<div>");
-    divList.addClass("selectList");
-    //$(divList).attr('id', i);
-    var pName = $("<p>");
-    pName.text(arr.station_name);
-    var pPhone = $("<p>");
-    pPhone.text(arr.station_phone);
-    var pStreet = $("<p>");
-    pStreet.text(arr.street_address);
-    var pZip = $("<p>");
-    pZip.text(arr.zip);
-    var pCity = $("<p>");
-    pCity.text(arr.city);
-    var pBreak = $("<br>");
-    //aEle.append(divList);
-    divList.append(pName);
-    divList.append(pPhone);
-    divList.append(pStreet);
-    divList.append(pZip);
-    divList.append(pCity);
-    $("#listLoc").append(pBreak);
-    $("#listLoc").append(divList);
-  //}
-}
+// //function to dynamically add station details to the sidebar
+// function addStationList(arr) {
+//   //for (let i = 0; i < arr.length; i++) {
+
+//     var divList = $("<div>");
+//     divList.addClass("selectList");
+//     //$(divList).attr('id', i);
+//     var pName = $("<p>");
+//     pName.text(arr.station_name);
+//     var pPhone = $("<p>");
+//     pPhone.text(arr.station_phone);
+//     var pStreet = $("<p>");
+//     pStreet.text(arr.street_address);
+//     var pZip = $("<p>");
+//     pZip.text(arr.zip);
+//     var pCity = $("<p>");
+//     pCity.text(arr.city);
+//     var pBreak = $("<br>");
+//     //aEle.append(divList);
+//     divList.append(pName);
+//     divList.append(pPhone);
+//     divList.append(pStreet);
+//     divList.append(pZip);
+//     divList.append(pCity);
+//     $("#listLoc").append(pBreak);
+//     $("#listLoc").append(divList);
+//   //}
+// }
 
 
 

@@ -20,7 +20,7 @@ THEN I will be shown information about that charging station
 ## Mock-Up vs. Project
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 ![Mock-Up](./Assets/mock-up.gif)
-![Project](tbd)
+![Project](./Assets/final.gif)
 
 ## API Reference
 These APIs provide information to drivers of the nearest charging stations as well as the station details.
@@ -41,10 +41,10 @@ github URL:
 https://github.com/yerimechoi/Project_1
 
 ## Collaborators
-Greg Griffith               @GregGriffith905
-Jeena Vasudevan             @JeenaKozhimukkath
-Joshua Ramkissoon           @JoshuaOrlandoR
-Esther Choi                 @yerimechoi
+Greg Griffith           https://github.com/GregGriffith905
+Jeena Vasudevan         https://github.com/JeenaKozhimukkath
+Joshua Ramkissoon       https://github.com/JoshuaOrlandoR
+Esther Choi             https://github.com/yerimechoi
 
 ## License
 N/A
