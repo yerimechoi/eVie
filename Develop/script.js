@@ -6,13 +6,13 @@ var evieIcon = $("#evie-nav");
 var searchBar = $("#autocomplete");
 var place;
 
-let autocomplete; 
+let autocomplete;
 function initAutocomplete() {
     autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'),
-    {
-        fields: ['place_id','geometry','name']
-    });
-    autocomplete.addListener('place_changed', onPlaceChanged) ; 
+        {
+            fields: ['place_id', 'geometry', 'name']
+        });
+    autocomplete.addListener('place_changed', onPlaceChanged);
 
 }
 
@@ -30,34 +30,13 @@ function onPlaceChanged() {
 
         indexSearch = localStorage.getItem("indexSearch");
         console.log(searchBar.val());
-        
-
-        
-        
-
-
-    }   
+    }
 }
 
-goButton.on('click', function(){
+goButton.on('click', function () {
     window.open("./map.html");  //open map.html when go button is clicked
 });
 
-evieIcon.on('click', function(){
+evieIcon.on('click', function () {
     window.open("./map.html");  //open map.html when go button is clicked
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
