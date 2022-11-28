@@ -18,8 +18,10 @@ WHEN I select a charging station
 THEN I will be shown information about that charging station
 
 ## Mock-Up vs. Project
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+The following shows the comparison between the mock-up and the final site. The mock-up was created in figma as a wireframe as to how the site will look and act. Following the wireframe, the site looks very similar to the mock-up with additional details and animations.
+
 ![Mock-Up](./Assets/mock-up.gif)
+
 ![Project](./Assets/final.gif)
 
 ## API Reference
