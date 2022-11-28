@@ -44,8 +44,11 @@ https://github.com/yerimechoi/Project_1
 
 ## Collaborators
 Greg Griffith           https://github.com/GregGriffith905
+
 Jeena Vasudevan         https://github.com/JeenaKozhimukkath
+
 Joshua Ramkissoon       https://github.com/JoshuaOrlandoR
+
 Esther Choi             https://github.com/yerimechoi
 
 ## License
