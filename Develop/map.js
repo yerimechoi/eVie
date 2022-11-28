@@ -2,7 +2,7 @@ var searchBar = $("#searchInput");
 var indexSearch = localStorage.getItem("indexSearch");
 var indexFlag = localStorage.getItem("indexFlag");
 var placeDetails = JSON.parse(localStorage.getItem("placeDetails"));
-
+let infoW;
 function initMap() {
 
   let chargingStationResults = "https://developer.nrel.gov/api/alt-fuel-stations/v1/nearest.json?api_key=aeMQVkjcPT4MOb6dlvaOQLqyHzeSaqhyIB4xDSzf&location=Toronto,ON&status=E&access=public&fuel_type=ELEC&ev_charging_level=all&state=ON&country=CA&limit=all"
@@ -274,11 +274,15 @@ function initMap() {
           animation: google.maps.Animation.DROP,
           draggable: false,
         })
+        //display info window
+        infoW=new google.maps.InfoWindow({});
+        
         //added click event to marker to zoom and display details in the sidebar 
         google.maps.event.addListener(pin, 'click', function () {
           map.setCenter(this.getPosition());
           map.setZoom(17);
-
+          infoW.setContent(data.fuel_stations[i].station_name);
+          infoW.open(map,this);
           let searchLoc = {
             station_name: data.fuel_stations[i].station_name,
             station_phone: data.fuel_stations[i].station_phone,
